@@ -1,0 +1,88 @@
+{
+ "name": "Stage 1",
+ "speed": 200,
+ "boss_at": 5600,
+ "events": [
+  {
+   "at": 500,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": 10
+   },
+   "right": {
+    "op": "add",
+    "value": -8
+   }
+  },
+  {
+   "at": 1300,
+   "type": "grunts",
+   "x": 270,
+   "count": 6
+  },
+  {
+   "at": 2000,
+   "type": "gates",
+   "left": {
+    "op": "mul",
+    "value": 2
+   },
+   "right": {
+    "op": "add",
+    "value": 5
+   }
+  },
+  {
+   "at": 2700,
+   "type": "grunts",
+   "x": 190,
+   "count": 4
+  },
+  {
+   "at": 2700,
+   "type": "grunts",
+   "x": 350,
+   "count": 4
+  },
+  {
+   "at": 3400,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": 15
+   },
+   "right": {
+    "op": "div",
+    "value": 2
+   }
+  },
+  {
+   "at": 4100,
+   "type": "grunts",
+   "x": 270,
+   "count": 8
+  },
+  {
+   "at": 4700,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": 12
+   },
+   "right": {
+    "op": "add",
+    "value": -10
+   }
+  }
+ ],
+ "boss": {
+  "hp": 400,
+  "patterns": [
+   "slam"
+  ],
+  "cooldown": 1.6,
+  "slam_base": 8,
+  "slam_ratio": 0.1
+ }
+}

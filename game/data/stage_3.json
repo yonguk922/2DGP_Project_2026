@@ -1,0 +1,178 @@
+{
+ "name": "Stage 3",
+ "speed": 240,
+ "boss_at": 8800,
+ "events": [
+  {
+   "at": 500,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -10
+   },
+   "right": {
+    "op": "add",
+    "value": 10
+   }
+  },
+  {
+   "at": 900,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": 8
+   },
+   "right": {
+    "op": "add",
+    "value": -15
+   }
+  },
+  {
+   "at": 1300,
+   "type": "shooter",
+   "x": 110
+  },
+  {
+   "at": 1500,
+   "type": "shooter",
+   "x": 430
+  },
+  {
+   "at": 1700,
+   "type": "grunts",
+   "x": 270,
+   "count": 8
+  },
+  {
+   "at": 2400,
+   "type": "gates",
+   "left": {
+    "op": "div",
+    "value": 2
+   },
+   "right": {
+    "op": "add",
+    "value": -20
+   }
+  },
+  {
+   "at": 3000,
+   "type": "charger",
+   "x": 270
+  },
+  {
+   "at": 3200,
+   "type": "grunts",
+   "x": 190,
+   "count": 6
+  },
+  {
+   "at": 3200,
+   "type": "grunts",
+   "x": 350,
+   "count": 6
+  },
+  {
+   "at": 3900,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -18
+   },
+   "right": {
+    "op": "mul",
+    "value": 2
+   }
+  },
+  {
+   "at": 4400,
+   "type": "shooter",
+   "x": 110
+  },
+  {
+   "at": 4400,
+   "type": "shooter",
+   "x": 430
+  },
+  {
+   "at": 4800,
+   "type": "charger",
+   "x": 270
+  },
+  {
+   "at": 5400,
+   "type": "gates",
+   "left": {
+    "op": "div",
+    "value": 2
+   },
+   "right": {
+    "op": "div",
+    "value": 2
+   }
+  },
+  {
+   "at": 5800,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -10
+   },
+   "right": {
+    "op": "mul",
+    "value": 2
+   }
+  },
+  {
+   "at": 6300,
+   "type": "grunts",
+   "x": 270,
+   "count": 12
+  },
+  {
+   "at": 6600,
+   "type": "charger",
+   "x": 200
+  },
+  {
+   "at": 6700,
+   "type": "charger",
+   "x": 340
+  },
+  {
+   "at": 7300,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": 12
+   },
+   "right": {
+    "op": "add",
+    "value": -25
+   }
+  },
+  {
+   "at": 7800,
+   "type": "shooter",
+   "x": 110
+  },
+  {
+   "at": 7900,
+   "type": "grunts",
+   "x": 300,
+   "count": 6
+  }
+ ],
+ "boss": {
+  "hp": 1400,
+  "patterns": [
+   "slam",
+   "fan",
+   "summon"
+  ],
+  "cooldown": 1.0,
+  "slam_base": 10,
+  "slam_ratio": 0.16,
+  "fan_count": 9
+ }
+}

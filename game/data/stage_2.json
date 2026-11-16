@@ -1,0 +1,114 @@
+{
+ "name": "Stage 2",
+ "speed": 220,
+ "boss_at": 7000,
+ "events": [
+  {
+   "at": 500,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -12
+   },
+   "right": {
+    "op": "add",
+    "value": 8
+   }
+  },
+  {
+   "at": 1200,
+   "type": "grunts",
+   "x": 270,
+   "count": 8
+  },
+  {
+   "at": 1700,
+   "type": "charger",
+   "x": 200
+  },
+  {
+   "at": 2300,
+   "type": "gates",
+   "left": {
+    "op": "div",
+    "value": 2
+   },
+   "right": {
+    "op": "add",
+    "value": 10
+   }
+  },
+  {
+   "at": 3000,
+   "type": "grunts",
+   "x": 190,
+   "count": 5
+  },
+  {
+   "at": 3000,
+   "type": "grunts",
+   "x": 350,
+   "count": 5
+  },
+  {
+   "at": 3300,
+   "type": "charger",
+   "x": 350
+  },
+  {
+   "at": 3900,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -20
+   },
+   "right": {
+    "op": "mul",
+    "value": 2
+   }
+  },
+  {
+   "at": 4500,
+   "type": "charger",
+   "x": 180
+  },
+  {
+   "at": 4650,
+   "type": "charger",
+   "x": 360
+  },
+  {
+   "at": 4900,
+   "type": "grunts",
+   "x": 270,
+   "count": 6
+  },
+  {
+   "at": 5500,
+   "type": "gates",
+   "left": {
+    "op": "add",
+    "value": -15
+   },
+   "right": {
+    "op": "div",
+    "value": 2
+   }
+  },
+  {
+   "at": 6100,
+   "type": "grunts",
+   "x": 270,
+   "count": 8
+  }
+ ],
+ "boss": {
+  "hp": 550,
+  "patterns": [
+   "slam"
+  ],
+  "cooldown": 1.0,
+  "slam_base": 10,
+  "slam_ratio": 0.14
+ }
+}

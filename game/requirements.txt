@@ -1,0 +1,2 @@
+pico2d
+Pillow        # 이미지 리소스 생성 스크립트(tools/make_assets.py)를 다시 돌릴 때만 필요

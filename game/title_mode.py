@@ -1,7 +1,7 @@
 """타이틀 화면."""
 from pico2d import (clear_canvas, update_canvas, get_events,
                     SDL_QUIT, SDL_KEYDOWN, SDL_MOUSEBUTTONDOWN,
-                    SDLK_ESCAPE, SDLK_RETURN, SDLK_u, SDLK_1, SDLK_2, SDLK_3)
+                    SDLK_ESCAPE, SDLK_RETURN, SDLK_r, SDLK_u, SDLK_1, SDLK_2, SDLK_3)
 
 import assets
 import config
@@ -11,6 +11,7 @@ import save_data
 import ui
 
 t = 0.0
+RESET_RECT = (150, 70, 390, 108)
 
 
 def init():
@@ -30,6 +31,10 @@ def start_stage(n):
     game_framework.change_mode(play_mode)
 
 
+def reset_progress():
+    save_data.reset()
+
+
 def handle_events():
     for e in get_events():
         if e.type == SDL_QUIT:
@@ -37,6 +42,8 @@ def handle_events():
         elif e.type == SDL_KEYDOWN:
             if e.key == SDLK_ESCAPE:
                 game_framework.quit()
+            elif e.key == SDLK_r:
+                reset_progress()
             elif e.key == SDLK_RETURN:
                 start_stage(1)
             elif e.key in (SDLK_1, SDLK_2, SDLK_3):
@@ -46,6 +53,9 @@ def handle_events():
             elif e.key == SDLK_u:
                 save_data.try_upgrade()
         elif e.type == SDL_MOUSEBUTTONDOWN:
+            if RESET_RECT[0] <= e.x <= RESET_RECT[2] and RESET_RECT[1] <= e.y <= RESET_RECT[3]:
+                reset_progress()
+                return
             start_stage(1)
 
 
@@ -94,4 +104,5 @@ def draw():
         ui.draw_img('coin.png', 262, 126)
         ui.text(str(save_data.upgrade_cost()), 282, 126, 24, 'yellow', align='left')
     ui.draw_img('t_help.png', W / 2, 52)
+    ui.draw_img('t_reset.png', W / 2, 90)
     update_canvas()

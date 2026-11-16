@@ -1,7 +1,7 @@
 """플레이 화면: 스테이지 데이터에 따라 게이트·적·보스를 생성하고 한 판을 진행한다."""
 from pico2d import (clear_canvas, update_canvas, get_events,
                     SDL_QUIT, SDL_KEYDOWN, SDL_KEYUP, SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP,
-                    SDLK_ESCAPE, SDLK_LEFT, SDLK_RIGHT, SDLK_a, SDLK_d)
+                    SDLK_ESCAPE, SDLK_r, SDLK_LEFT, SDLK_RIGHT, SDLK_a, SDLK_d)
 
 import config
 import fx
@@ -69,8 +69,13 @@ def handle_events():
         if e.type == SDL_QUIT:
             game_framework.quit()
         elif e.type == SDL_KEYDOWN:
-            if e.key == SDLK_ESCAPE:
-                paused = not paused
+            if paused:
+                if e.key == SDLK_r:
+                    paused = False
+                elif e.key == SDLK_ESCAPE:
+                    game_framework.change_mode(title_mode)
+            elif e.key == SDLK_ESCAPE:
+                paused = True
             elif e.key in (SDLK_LEFT, SDLK_a, SDLK_RIGHT, SDLK_d):
                 keys.add(e.key)
         elif e.type == SDL_KEYUP:

@@ -32,6 +32,12 @@ def save():
         pass
 
 
+def reset():
+    global data
+    data = dict(DEFAULT)
+    save()
+
+
 def start_soldiers():
     return START_SOLDIERS + PER_LEVEL * data['start_level']
 
